@@ -1,0 +1,40 @@
+JOB STORIES
+
+
+"A job story captures the situation, motivation, and desired outcome from a person’s perspective
+focusing on context rather than user demographics."
+
+Story #X
+
+When [situation/content]
+I want [motivation/capability]
+So [outcome/benefit]
+Because [underlying need]
+
+Story #X
+
+When [situation/content]
+I want [motivation/capability]
+So [outcome/benefit]
+Because [underlying need]
+
+Story #X
+
+When [situation/content]
+I want [motivation/capability]
+So [outcome/benefit]
+Because [underlying need]
+
+Story #X
+
+When [situation/content]
+I want [motivation/capability]
+So [outcome/benefit]
+Because [underlying need]
+
+Story #X
+
+When [situation/content]
+I want [motivation/capability]
+So [outcome/benefit]
+Because [underlying need]
