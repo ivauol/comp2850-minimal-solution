@@ -223,6 +223,8 @@ class TaskStore(
      * Clear all tasks (for testing).
      * Deletes CSV file and recreates with header only.
      */
+
+    // note to self route this but you can just clear it or smth idk
     fun clear() {
         csvFile.delete()
         csvFile.createNewFile()

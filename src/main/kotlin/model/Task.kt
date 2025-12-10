@@ -23,15 +23,9 @@ data class Task(
     val createdAt: LocalDateTime = LocalDateTime.now(),
 ) {
     companion object {
-        /**
-         * Minimum allowed length for task title.
-         */
-        const val MIN_TITLE_LENGTH = 3
-
-        /**
-         * Maximum allowed length for task title.
-         */
-        const val MAX_TITLE_LENGTH = 100
+        
+        const val MIN_TITLE_LENGTH = 3 // Minimum allowed length for task title.
+        const val MAX_TITLE_LENGTH = 100 // Maximum allowed length for task title.
 
         /**
          * Validate task title against business rules.
@@ -107,10 +101,9 @@ data class Task(
         )
 }
 
-/**
- * Validation result for task operations.
- * Sealed class ensures exhaustive when() expressions.
- */
+// Validation result for task operations.
+// Sealed class ensures exhaustive when() expressions.
+
 sealed class ValidationResult {
     /**
      * Validation passed, operation can proceed.

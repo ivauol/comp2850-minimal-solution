@@ -42,11 +42,11 @@ fun Routing.configureTaskRoutes(store: TaskStore = TaskStore()) {
     delete("/tasks/{id}") { call.handleDeleteTask(store) }  // HTMX path (RESTful)
     post("/tasks/{id}/delete") { call.handleDeleteTask(store) }  // No-JS fallback
     get("/tasks/search") { call.handleSearchTasks(store) }
+    // sjflsghfh { clear() }
 }
 
-/**
- * Week 8: Handle paginated task list view with HTMX fragment support.
- */
+// Week 8: Handle paginated task list view with HTMX fragment support.
+
 private suspend fun ApplicationCall.handleTaskList(store: TaskStore) {
     timed("T0_list", jsMode()) {
         val query = requestedQuery()
@@ -57,9 +57,8 @@ private suspend fun ApplicationCall.handleTaskList(store: TaskStore) {
     }
 }
 
-/**
- * Week 8: Handle task fragment route for live filtering + pagination updates.
- */
+// Week 8: Handle task fragment route for live filtering + pagination updates.
+
 private suspend fun ApplicationCall.handleTaskFragment(store: TaskStore) {
     timed("T1_filter", jsMode()) {
         val query = requestedQuery()
@@ -75,9 +74,8 @@ private suspend fun ApplicationCall.handleTaskFragment(store: TaskStore) {
     }
 }
 
-/**
- * Week 7 & 9: Create task, log instrumentation, refresh task area.
- */
+// Week 7 & 9: Create task, log instrumentation, refresh task area.
+
 private suspend fun ApplicationCall.handleCreateTask(store: TaskStore) {
     timed("T3_add", jsMode()) {
         val params = receiveParameters()
@@ -136,9 +134,8 @@ private suspend fun ApplicationCall.handleCreateTaskSuccess(
     }
 }
 
-/**
- * Handle task toggle (mark complete/incomplete).
- */
+// Handle task toggle (mark complete/incomplete).
+
 private suspend fun ApplicationCall.handleToggleTask(store: TaskStore) {
     timed("T2_edit", jsMode()) {
         val id =
@@ -175,9 +172,8 @@ private suspend fun ApplicationCall.handleToggleTask(store: TaskStore) {
     }
 }
 
-/**
- * Handle task deletion.
- */
+// Handle task deletion.
+ 
 private suspend fun ApplicationCall.handleDeleteTask(store: TaskStore) {
     timed("T4_delete", jsMode()) {
         val id =
@@ -207,9 +203,8 @@ private suspend fun ApplicationCall.handleDeleteTask(store: TaskStore) {
     }
 }
 
-/**
- * Handle task search with query parameter.
- */
+// Handle task search with query parameter.
+ 
 private suspend fun ApplicationCall.handleSearchTasks(store: TaskStore) {
     timed("T1_filter", jsMode()) {
         val query = requestedQuery()
@@ -295,9 +290,8 @@ private fun messageStatusFragment(
     return """<div id="status" hx-swap-oob="true" role="$role"$ariaLive$cssClass>$message</div>"""
 }
 
-/**
- * Week 7: GET /tasks/{id}/edit - Show inline edit form
- */
+// Week 7: GET /tasks/{id}/edit - Show inline edit form
+ 
 private suspend fun ApplicationCall.handleEditTask(store: TaskStore) {
     val id = parameters["id"] ?: run {
         respond(HttpStatusCode.BadRequest)
@@ -320,9 +314,8 @@ private suspend fun ApplicationCall.handleEditTask(store: TaskStore) {
     }
 }
 
-/**
- * Week 7: POST /tasks/{id}/edit - Update task
- */
+// Week 7: POST /tasks/{id}/edit - Update task
+ 
 private suspend fun ApplicationCall.handleUpdateTask(store: TaskStore) {
     val id = parameters["id"] ?: run {
         respond(HttpStatusCode.BadRequest)
@@ -368,10 +361,9 @@ private suspend fun ApplicationCall.handleUpdateTask(store: TaskStore) {
     }
 }
 
-/**
- * Week 7: GET /tasks/{id}/view - Cancel edit (return to view mode)
- * HTMX-only route for Cancel button (no-JS uses href="/tasks" fallback)
- */
+// Week 7: GET /tasks/{id}/view - Cancel edit (return to view mode)
+// HTMX-only route for Cancel button (no-JS uses href="/tasks" fallback)
+
 private suspend fun ApplicationCall.handleViewTask(store: TaskStore) {
     val id = parameters["id"] ?: run {
         respond(HttpStatusCode.BadRequest)
