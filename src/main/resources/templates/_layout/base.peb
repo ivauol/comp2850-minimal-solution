@@ -40,7 +40,7 @@
       position: static;
       width: auto;
       height: auto;
-      background: #017e27;
+      background: #017e27 !important;
       color: white;
       padding: 0.5rem 1rem;
       text-decoration: none;
